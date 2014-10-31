@@ -22,8 +22,14 @@
     </head>
     <body>
         <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <div cid="operamini" style="display:none;" class="container">
+          <div class="alert alert-info" role="alert">
+            <h3>Sorry, but this website does not support Opera Mini.</h3>
+          </div>
+        </div>
 
         <noscript>
           <main class="container">
@@ -106,5 +112,13 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+
+        <!-- Detect Opera Mini -->
+        <script>
+          var isOperaMini = (navigator.userAgent.indexOf('Opera Mini'));
+          if (isOperaMini) {
+            $('#operamini').show();
+          }
+        </script>
 </body>
 </html>
