@@ -98,3 +98,21 @@ CSS can target both supported and not supported versions as follows
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#c0c0c0');
   }
   ```
+
+Modernizr can be used to load polyfill if a feature is not supported.
+For example, to load Adobe Flash player when HTML5 video element is not supported:
+
+  ```html
+  <script type="text/javascript">
+  Modernizr.load({
+    test: Modernizr.video,
+    nope: 'http://api.html5media.info/1.1.8/html5media.min.js'
+  });
+  </script>
+  ```
+
+### NOTE
+
+Bower installed version of Modernizr does not come with `load` test.
+You must download a [custom install](http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load)
+and ensure that `Modernizr.load` is checked
