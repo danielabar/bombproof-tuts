@@ -46,3 +46,55 @@ Use conditional tags, change version number as appropriate:
 
 Use JavaScript to parse user agent
 
+  ```html
+  <script>
+    var isOperaMini = (navigator.userAgent.indexOf('Opera Mini'));
+    if (isOperaMini) {
+      $('#operamini').show();
+    }
+  </script>
+  ```
+
+### Detect and Respond: Deploying Modernizr
+
+[Modernizr](http://modernizr.com/download/) performs feature detections.
+
+Modernizr also load common polyfills, such as html5shiv (support main, header, footer, aside etc elements) and media queries.
+
+Adds class attribute to `<html>` element with list of supported styling features, and `no-` versions of these when not supported.
+
+For example, `boxshadow` is supported on Chrome
+
+  ```html
+  <html boxshadow>
+  ```
+
+But not supported on IE8
+
+  ```html
+  <html no-boxshadow>
+  ```
+
+So given an element you want to style with boxshadow such as
+
+  ```html
+  <div class="wrapper">
+    <h4>Hello</h4>
+    <p>This is a box shadow</p>
+  </div>
+  ```
+
+CSS can target both supported and not supported versions as follows
+
+  ```css
+  .wrapper {
+    -webkit-box-shadow: 3px 3px 3px 0px #c0c0c0;
+    box-shadow: 3px 3px 3px 0px #c0c0c0;
+  }
+
+  .no-boxshadow .wrapper {
+    border: 1px solid #c0c0c0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#c0c0c0')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#c0c0c0');
+  }
+  ```
