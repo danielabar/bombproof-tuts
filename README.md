@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Bombproof Web Design](#bombproof-web-design)
+  - [Detect and Respond: No JavaScript](#detect-and-respond-no-javascript)
+    - [Sorry, you must enable JavaScript to use this site.](#sorry-you-must-enable-javascript-to-use-this-site)
+  - [Detect and Respond: Problem Browsers](#detect-and-respond-problem-browsers)
+    - [Detect older versions of IE](#detect-older-versions-of-ie)
+    - [Detect Opera Mini](#detect-opera-mini)
+  - [Detect and Respond: Deploying Modernizr](#detect-and-respond-deploying-modernizr)
+      - [Hello](#hello)
+    - [Modernizr Bower Gotcha](#modernizr-bower-gotcha)
+  - [Cross Compatible Type](#cross-compatible-type)
+    - [Web Font Issues (including icon fonts)](#web-font-issues-including-icon-fonts)
+    - [OS Font Issues](#os-font-issues)
+    - [Icon Font Issues](#icon-font-issues)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Bombproof Web Design
 
 My notes and project from Tuts Plus course [Bombproof Web Design](https://webdesign.tutsplus.com/courses/bombproof-web-design)
