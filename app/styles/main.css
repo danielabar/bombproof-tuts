@@ -75,6 +75,48 @@ body {
   color: red;
 }
 
+.fontexampleone h1,
+.fontexampleone h2,
+.fontexampleone h3 {
+  font-family: 'Changa One', cursive;
+}
+
+.fontexampletwo h1,
+.fontexampletwo h2,
+.fontexampletwo h3 {
+  font-family: 'Lemon', cursive;
+}
+
+.maconlyexample p {
+  font-family: 'Helvetica Neue';
+  font-size: 1.4em;
+}
+
+p.serifexample {
+  font-size: 1.5em;
+  font-family: serif;
+}
+
+p.sanserifexample {
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+p.cursiveexample {
+  font-size: 1.5em;
+  font-family: cursive;
+}
+
+p.fantasyexample {
+  font-size: 1.5em;
+  font-family: fantasy;
+}
+
+p.monospaceexample {
+  font-size: 1.5em;
+  font-family: monospace;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {

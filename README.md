@@ -55,7 +55,7 @@ Use JavaScript to parse user agent
   </script>
   ```
 
-### Detect and Respond: Deploying Modernizr
+## Detect and Respond: Deploying Modernizr
 
 [Modernizr](http://modernizr.com/download/) performs feature detections.
 
@@ -111,8 +111,53 @@ For example, to load Adobe Flash player when HTML5 video element is not supporte
   </script>
   ```
 
-### NOTE
+### Modernizr Bower Gotcha
 
 Bower installed version of Modernizr does not come with `load` test.
 You must download a [custom install](http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load)
 and ensure that `Modernizr.load` is checked
+
+## Cross Compatible Type
+
+### Web Font Issues (including icon fonts)
+
+Web fonts can render differently or poorly on different browsers. Web fonts may not load or be supported properly.
+
+For example, [ChangaOne](https://www.google.com/fonts/specimen/Changa+One) from Google Fonts renders nice and smoothly on Chrome on OSX,
+but on Chrome for Ubuntu, and Windows, is rough and jagged. Same font on Firefox looks good both on OSX and Windows.
+
+When choosing web fonts, first check how they look on as many different browsers and operating systems as possible.
+
+### OS Font Issues
+
+Some OS fonts can be missing on some systems. For example, Helvetica Neue is Mac only.
+
+Generally fonts that are safe to use on Windows will also be available on Mac.
+
+For the most consistent experience, use generic font families, to specify a font style rather than particular font.
+This will work on any system, no matter what fonts it has available. Font families are:
+
+* Serif
+* Sans Serif
+* Cursive
+* Fantasy
+* Monospace
+
+Always specify a font stack in css, list of fonts to use in preferred order. For example:
+
+  ```css
+  .wrapper {
+    font-family: "Helvetica Neueu", "Arial", sans-serif;
+  }
+  h1 {
+    font-family: "Lemon", fantasy;
+  }
+  ```
+
+### Icon Font Issues
+
+For example, [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/)
+
+These use `@font-face` but this is not supported in Opera Mini. Each icon will render as little empty rectangle. No polyfill for this.
+
+Can use Modernizr to detect whether font-face is available, and if not, use css to load images instead.
