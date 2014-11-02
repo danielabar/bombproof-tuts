@@ -15,6 +15,7 @@
     - [OS Font Issues](#os-font-issues)
     - [Icon Font Issues](#icon-font-issues)
   - [CSS Preprocessors and Prefixes](#css-preprocessors-and-prefixes)
+  - [Using Normalize.css](#using-normalizecss)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -206,3 +207,16 @@ it's a paid app, but also has a trial version. Simply drag in a folder containin
 There is also an option to add vendor prefixes.
 
 [nib](http://tj.github.io/nib/) is a mixin library for Stylus. This library also incorporates vendor prefixes.
+
+## Using Normalize.css
+
+[Normalize.css](http://necolas.github.io/normalize.css/) is used to handle cross browser inconsistencies.
+
+The idea is to load normalize.css as first css file on your site,
+to create a foundation that normalizes all of the default behaviours of html elements across browsers.
+
+It's available in Stylus, LESS, or SASS versions. For example, if your site uses LESS, import normalize into your main stylesheet as follows
+
+  ```LESS
+  @import "normalize.less";
+  ```
