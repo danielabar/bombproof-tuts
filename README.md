@@ -4,7 +4,6 @@
 
 - [Bombproof Web Design](#bombproof-web-design)
   - [Detect and Respond: No JavaScript](#detect-and-respond-no-javascript)
-    - [Sorry, you must enable JavaScript to use this site.](#sorry-you-must-enable-javascript-to-use-this-site)
   - [Detect and Respond: Problem Browsers](#detect-and-respond-problem-browsers)
     - [Detect older versions of IE](#detect-older-versions-of-ie)
     - [Detect Opera Mini](#detect-opera-mini)
@@ -15,6 +14,7 @@
     - [Web Font Issues (including icon fonts)](#web-font-issues-including-icon-fonts)
     - [OS Font Issues](#os-font-issues)
     - [Icon Font Issues](#icon-font-issues)
+  - [CSS Preprocessors and Prefixes](#css-preprocessors-and-prefixes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -40,7 +40,7 @@ Content can also be styled, for example:
   <noscript>
     <main class="container">
       <div class="alert alert-danger" role="alert">
-        <h3>Sorry, you must enable JavaScript to use this site.</h3>
+        Sorry, you must enable JavaScript to use this site.
       </div>
     </main>
   </noscript>
@@ -181,3 +181,28 @@ For example, [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/)
 These use `@font-face` but this is not supported in Opera Mini. Each icon will render as little empty rectangle. No polyfill for this.
 
 Can use Modernizr to detect whether font-face is available, and if not, use css to load images instead.
+
+## CSS Preprocessors and Prefixes
+
+Needed for relatively new css properties that aren't standard yet in all browsers. For example
+
+  ```css
+  .wrapper {
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+  }
+  ```
+
+It's a lot to keep track of, use tools to automate the process.
+
+[Autoprefixer](https://github.com/postcss/autoprefixer) open source library, looks up css properties on [CanIUse](http://caniuse.com/),
+and incorporates vendor prefixes if necessary.
+
+Another possibility is to use a CSS preprocessor such as [Stylus](http://learnboost.github.io/stylus/),
+[SASS](http://sass-lang.com/), or [LESS](http://lesscss.org/).
+
+Another tool for working with vendor prefixes and CSS preprocessors is [Prepros App](https://prepros.io/),
+it's a paid app, but also has a trial version. Simply drag in a folder containing for example, stylus, and it automatically compiles to CSS.
+There is also an option to add vendor prefixes.
+
+[nib](http://tj.github.io/nib/) is a mixin library for Stylus. This library also incorporates vendor prefixes.
