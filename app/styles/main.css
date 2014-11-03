@@ -125,6 +125,12 @@ p.monospaceexample {
   -webkit-transform: rotate(7deg);
 }
 
+.scale-example {
+  border: 1px solid grey;
+  padding: 1.3em;
+  margin: 1.5em;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {

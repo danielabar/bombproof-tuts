@@ -16,6 +16,8 @@
     - [Icon Font Issues](#icon-font-issues)
   - [CSS Preprocessors and Prefixes](#css-preprocessors-and-prefixes)
   - [Using Normalize.css](#using-normalizecss)
+  - [Allowing Base Font Size Control](#allowing-base-font-size-control)
+    - [Scaling](#scaling)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -220,3 +222,39 @@ It's available in Stylus, LESS, or SASS versions. For example, if your site uses
   ```LESS
   @import "normalize.less";
   ```
+
+## Allowing Base Font Size Control
+
+Never set pixel based font size. For example, **_DO NOT DO THIS_**
+
+  ```css
+  html {
+    font-size: 16px
+  }
+  ```
+
+Because user can change font size, for example in Chrome:
+* Settings
+* Show Advanced Settings
+* Web Content
+* Font size
+
+If you don't have base font size set, then user's settings change will be applied.
+But if you have set base font size, then user's settings are not applied.
+This is bad, user might have very good reason for increasing font size, such as if they are vision impaired.
+
+Another reason to leave font size alone is because on different devices, browser vendors have determined the optimal base font size.
+
+Also on very large devices, such as TV, user tends to be sitting far away from the screen,
+and commonly UI designs optimized for TV screens have everything blown up very large.
+
+Another consideration is how padding, margin and border radius can vary with base font size. If set in pixels, these values are carved in stone.
+
+### Scaling
+
+Can use CSS pre-processors to ensure that when user changes base font size, the whole site will scale with it.
+
+Easiest way to scale margin and padding is to use `em` values instead of `px`.
+
+1em represents however big the font is in a particular region.
+For example, suppose base font size is set to 10px, then 1.5em = 15px, 3m = 30px, etc.
