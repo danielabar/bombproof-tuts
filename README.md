@@ -256,5 +256,17 @@ Can use CSS pre-processors to ensure that when user changes base font size, the 
 
 Easiest way to scale margin and padding is to use `em` values instead of `px`.
 
+Preprocessor can help in px/em conversion, for example, in stylus:
+
+  ```stylus
+  $base_font_size = 16
+  $base_font_size_ems = nit($base_font_size / 16, em)
+  $px = unit(1 / $base_font_size, rem)
+  $px_em = unit(1 / $base_font_size, em)
+
+  .wrapper {
+    border 3 * $px solid grey
+  }
+
 1em represents however big the font is in a particular region.
 For example, suppose base font size is set to 10px, then 1.5em = 15px, 3m = 30px, etc.
