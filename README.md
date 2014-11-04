@@ -18,6 +18,7 @@
   - [Using Normalize.css](#using-normalizecss)
   - [Allowing Base Font Size Control](#allowing-base-font-size-control)
     - [Scaling](#scaling)
+  - [Dealing With Displays](#dealing-with-displays)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -229,7 +230,7 @@ Never set pixel based font size. For example, **_DO NOT DO THIS_**
 
   ```css
   html {
-    font-size: 16px
+    font-size: 16px;
   }
   ```
 
@@ -270,3 +271,94 @@ Preprocessor can help in px/em conversion, for example, in stylus:
 
 1em represents however big the font is in a particular region.
 For example, suppose base font size is set to 10px, then 1.5em = 15px, 3m = 30px, etc.
+
+If you must adjust font size somewhat (for example, working with a smaller typeface), can use em's, for example
+
+  ```css
+  html {
+    font-size: 1.1em;
+  }
+  ```
+
+## Dealing With Displays
+
+Key aspects to consider about displays:
+
+1. Resolution
+1. Pixel density (how many pixels per square inch)
+1. Viewport size (amount of space in the screen that your site has to take up)
+1. Physical size of the display
+
+There are millions of different resolutions a device could have.
+Any given resolution could have a different physical size depending on pixel density and physical size of the device.
+
+Example: A 1920 x 1080 resolution could be on a 5" smartphone or on a 65" smart tv.
+
+Best way to deal with all the different screen sizes and resolutions is not to deal with them at all (counterintuitive).
+Site layout should be completely flexible and adaptable, i.e. device agnostic.
+
+Two main aspects for creating display agnostic layouts
+
+1. Every aspect of layout should have fully flexible width (never used fixed width)
+1. Use media queries to adjust layout on increasingly smaller screens
+
+Use css attributes `width` and `max-width`, for site overall, for example
+
+  ```css
+  .wrapper {
+    max-width: 75rem;
+    width: 100%;
+    margin: 1.5em auto;
+    zoom: 1;
+  }
+  ```
+
+Within that, use percentages for widths, for example
+
+  ```css
+  .content {
+    width: 64%;
+    float: left;
+    margin-right: 2%;
+  }
+  .sidebar {
+    width: 34%;
+    float: left;
+  }
+  ```
+
+Use media queries to adjust layout at varying widths. For example, a two column layout doesn't make sense on a small display.
+
+Determining at which width layout should change will vary with each site you build, and requires some trial and error.
+Try shrinking the browser width down until you get to a point where it seems hard to read.
+For example with the two column layout, ~840px width. That's a good place for a media query.
+
+Every media query is called a breakpoint. This stylus example shows media query with calculation to use rem units rather than px
+
+  ```stylus
+  $base_font_size = 16
+  $px = unit(1 / $base_font_size, rem)
+
+  $query_01 = "(max-width: " + 840 * $px + ")"
+
+  @media $query_01
+    .panel
+      padding 1.5em
+  ```
+
+To stack the two columns into one at a smaller breakpoint, for example 650 width, set width to 100% and float to none
+
+  ```stylus
+  $query_02 = "(max-width: " + 650 * $px + ")"
+
+  @media $query_02
+    .content
+      width 100%
+      float none
+      margin-right 0
+      margin-bottom 1.5em
+
+    .sidebar
+      width 100%
+      float none
+  ```
