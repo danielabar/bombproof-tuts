@@ -19,6 +19,7 @@
   - [Allowing Base Font Size Control](#allowing-base-font-size-control)
     - [Scaling](#scaling)
   - [Dealing With Displays](#dealing-with-displays)
+  - [Input Mechanisms](#input-mechanisms)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -362,3 +363,29 @@ To stack the two columns into one at a smaller breakpoint, for example 650 width
       width 100%
       float none
   ```
+
+## Input Mechanisms
+
+Don't assume user has a mouse to hover over menu items and interact with page. Input devices can include:
+
+* Mouse
+* Touch
+* Keyboard / Game Controller / TV Remote
+* Voice
+
+Enabling pure keyboard interaction is good for accessibility.
+Also, if site is fully navigable by keyboard, it will also be navigable by game controller and tv remotes.
+
+Guidelines:
+
+* Don't use hover dependent interactions (because mouse is only input mechanism that supports this)
+* Ensure navigation can be done with TAB, arrow, Esc and ENTER keys
+
+CSS dropdowns are [example](http://csswizardry.com/demos/css-dropdown/) of bad interaction because it only works with mouse, not touch friendly.
+
+Example of menu that can be interacted with via touch and keyboard is nav provided by Bootstrap, [example](http://bootswatch.com/).
+Dropdown menus are activated by a click instead of hover. Also menus that have dropdown have a small down arrow beside them
+to give a hint that there are items.
+
+As user is navigating the site using a keyboard, should provide visual feedback as to which part of the page is being interacted with.
+For example, if user tabs to a link, provide an outline around it.
