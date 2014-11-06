@@ -20,6 +20,7 @@
     - [Scaling](#scaling)
   - [Dealing With Displays](#dealing-with-displays)
   - [Input Mechanisms](#input-mechanisms)
+  - [Creating Accessibility](#creating-accessibility)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -389,3 +390,16 @@ to give a hint that there are items.
 
 As user is navigating the site using a keyboard, should provide visual feedback as to which part of the page is being interacted with.
 For example, if user tabs to a link, provide an outline around it.
+
+## Creating Accessibility
+
+Things to think about:
+
+* Font sizing, see [Allowing Base Font Size Control](#allowing-base-font-size-control)
+* Allowing keyboard based navigation (helpful for people with visual and mobility impairments)
+* Providing text accompaniment to auditory content (eg: videos should have closed captions)
+* WAI-ARIA landmark roles & heading structure for screen readers
+* Color contrast (helpful for people who have color blindness or reduced vision)
+
+Try navigating your site using a screen reader.
+On Mac, Cmd+F5 to turn on [Voice Over](https://www.apple.com/voiceover/info/guide/_1121.html)
