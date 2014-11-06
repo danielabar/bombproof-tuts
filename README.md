@@ -21,6 +21,8 @@
   - [Dealing With Displays](#dealing-with-displays)
   - [Input Mechanisms](#input-mechanisms)
   - [Creating Accessibility](#creating-accessibility)
+    - [Screen Reader](#screen-reader)
+    - [Color Contrast](#color-contrast)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -401,5 +403,27 @@ Things to think about:
 * WAI-ARIA landmark roles & heading structure for screen readers
 * Color contrast (helpful for people who have color blindness or reduced vision)
 
+### Screen Reader
+
 Try navigating your site using a screen reader.
 On Mac, Cmd+F5 to turn on [Voice Over](https://www.apple.com/voiceover/info/guide/_1121.html)
+
+Screen reader has a command to list all the landmarks on the page.
+User can select a landmark to have the screenreader go straight to that section.
+
+`role="main"` is a landmark. It tells the screen reader which part of the page contains the main aspect of the content, for example
+
+  ```html
+  <main class="panel content" role="main">
+  ```
+
+`role="navigation"` is another landmark.
+
+Another important component for screen readers is to have good heading structure.
+
+### Color Contrast
+
+[Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) is a chrome plugin that will perform accessibility audit on your site.
+Included in the audit is an assessment of color contrast. Right-click on an element to inspect, then select Accessibility Properties.
+It will display color contrast score, and if the score is too low, suggests colors to achieve a better contrast.
+
