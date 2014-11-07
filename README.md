@@ -427,3 +427,25 @@ Another important component for screen readers is to have good heading structure
 Included in the audit is an assessment of color contrast. Right-click on an element to inspect, then select Accessibility Properties.
 It will display color contrast score, and if the score is too low, suggests colors to achieve a better contrast.
 
+## Testing Tools
+
+Best way to test is to have a number of devices that run on different operating systems.
+For example, if your primary development machine is a mac, also have a windows laptop that can dual boot to ubuntu.
+
+For easy ubuntu dual boot setup on Windows, try [Wubi](https://wiki.ubuntu.com/WubiGuide)
+
+For mobile, have some devices running Android and iOS. To really get a grasp on touch interactions, need physical devices.
+
+Also have a laptop hooked up to a TV, so you can see how your site renders on an extra large screen.
+
+Can also use Virtual Machines, for example, to test IE8, 9, etc, even if you're on a Mac.
+Install [Virtual Box](https://www.virtualbox.org/), then follow [these instructions](https://github.com/xdissent/ievms) on github
+to download the modern.ie images and install them in virtual box.
+
+For Opera mobile testing, use [Opera Mobile Classic Emulator](http://www.opera.com/developer/mobile-emulator)
+
+For Opera mini testing, follow [these steps](https://dev.opera.com/articles/installing-opera-mini-on-your-computer/)
+
+Can also use Chrome Developer Tools Mobile Emulator.
+
+To assess how well you're doing with accessibility, try [Fangs Screen Reader Emulator](https://addons.mozilla.org/en-US/firefox/addon/fangs-screen-reader-emulator/) Firefox add-on.
