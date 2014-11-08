@@ -23,6 +23,7 @@
   - [Creating Accessibility](#creating-accessibility)
     - [Screen Reader](#screen-reader)
     - [Color Contrast](#color-contrast)
+  - [Testing Tools](#testing-tools)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -449,3 +450,13 @@ For Opera mini testing, follow [these steps](https://dev.opera.com/articles/inst
 Can also use Chrome Developer Tools Mobile Emulator.
 
 To assess how well you're doing with accessibility, try [Fangs Screen Reader Emulator](https://addons.mozilla.org/en-US/firefox/addon/fangs-screen-reader-emulator/) Firefox add-on.
+Pulls out the text of your page, and formats it the same way a screen reader would.
+
+Should also use an actual screen reader to test your sites.
+
+On Mac, [VoiceOver](https://www.apple.com/au/accessibility/osx/voiceover/) is already installed.
+
+On Windows, install [NVDA](http://www.nvaccess.org/), a free screen reader.
+
+On Ubuntu, use [Orca](https://wiki.gnome.org/action/show/Projects/Orca) screen reader, which is pre-installed.
+
