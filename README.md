@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Bombproof Web Design](#bombproof-web-design)
+  - [Seven Aspects of Cross Compatibility](#seven-aspects-of-cross-compatibility)
   - [Detect and Respond: No JavaScript](#detect-and-respond-no-javascript)
   - [Detect and Respond: Problem Browsers](#detect-and-respond-problem-browsers)
     - [Detect older versions of IE](#detect-older-versions-of-ie)
@@ -30,6 +31,52 @@
 # Bombproof Web Design
 
 My notes and project from Tuts Plus course [Bombproof Web Design](https://webdesign.tutsplus.com/courses/bombproof-web-design)
+
+## Seven Aspects of Cross Compatibility
+
+1. Device
+	* Desktop
+	* Laptop
+	* Netbook
+    * Phone
+    * Tablet
+    * Smart TV
+    * Consoles
+    * Smart Watch
+1. Operating System
+	* Mac
+	* Windows
+	* Linux
+	* Chrome
+	* iOS
+	* Ubuntu
+	* Android
+1. Display
+	* Resolution
+	* Pixel Density
+	* Viewport pixel size
+	* Viewport physical size
+1. Input Mechanism
+	* Mouse
+	* Keyboard
+	* Touch
+	* Game Controller
+	* TV Remote
+	* Voice
+1. Browser Choice
+	* Chrome
+	* Safari
+	* IE
+	* Opera
+	* Opera Mini
+	* Firefox
+1. Browser Settings
+	* User preferences
+	* Leveraging user preferences
+1. Accessibility
+	* Visual impairment
+	* Auditory impairment
+	* Mobility impairment
 
 ## Detect and Respond: No JavaScript
 
